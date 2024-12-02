@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoMdHome } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
@@ -9,6 +8,7 @@ import { BsFillSlashSquareFill } from "react-icons/bs";
 import { IoMdContacts } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { CgMoreO } from "react-icons/cg";
+import Feed from "@/components/feeds";
 
 interface XsidebarButton {
   title: string;
@@ -58,12 +58,12 @@ export default function Home() {
   return (
     <div>
       <div className="grid grid-cols-12 h-screen w-screen px-32">
-        <div className="col-span-3 pt-1 px-2">
-          <div className="text-3xl h-fit hover:bg-gray-800 rounded-full p-2 cursor-pointer">
+        <div className="col-span-3 pt-1 ml-30 ">
+          <div className="text-3xl h-fit hover:bg-gray-800 rounded-full p-2 cursor-pointer ">
             <FaXTwitter />
           </div>
           <div className="text-2xl pr-4">
-            <ul>
+            <ul>  
               {sidebar.map((item) => (
                 <li
                   className="flex justify-start items-center gap-3 hover:bg-gray-800 rounded-full px-3 py-3 w-fit cursor-pointer"
@@ -75,13 +75,19 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-1 pr-10 px-3">
-            <button className="bg-[#1D9BF0] font-semibold text-lg py-2 rounded-full w-full">
+            <button className="bg-[#1D9BF0] font-semibold text-lg py-2 px-2 rounded-full w-full">
               Post
             </button>
             </div>
           </div>
         </div>
-        <div className="col-span-6 border-r-[1px] border-l-[1px] border-gray-500"></div>
+        <div className="col-span-6 border-r-[1px] border-l-[1px]  border-gray-600 mr-35">
+          <Feed />
+          <Feed />
+          <Feed />
+          <Feed />
+          <Feed />
+        </div>
         <div className="col-span-3"></div>
       </div>
     </div>
